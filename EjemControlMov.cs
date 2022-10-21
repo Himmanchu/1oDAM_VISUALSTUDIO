@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EjemControlMov : MonoBehaviour
 {
-    
+    public float vel;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +14,7 @@ public class EjemControlMov : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //Aumentar el eje Z
-            this.transform.Translate(0, 0, 2*Time.deltaTime);
+            this.transform.Translate(0, 0, vel*Time.deltaTime);
 
 
         }
@@ -22,19 +22,19 @@ public class EjemControlMov : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             //Disminuir el eje Z
-            this.transform.Translate(0, 0, -2 * Time.deltaTime);
+            this.transform.Translate(0, 0, -vel * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             //Aumentar el eje X
-            this.transform.Translate(-2 * Time.fixedDeltaTime, 0, 0 );
+            this.transform.Translate(-vel * Time.deltaTime, 0, 0 );
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //Disminuir el eje X
-            this.transform.Translate(2 * Time.fixedDeltaTime, 0, 0);
+            this.transform.Translate(vel * Time.deltaTime, 0, 0);
         }
     }
 }
