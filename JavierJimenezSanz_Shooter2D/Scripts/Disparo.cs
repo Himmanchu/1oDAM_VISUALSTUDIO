@@ -13,12 +13,7 @@ public class Disparo : MonoBehaviour
 
     public Animator miAnim;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+  
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +32,6 @@ public class Disparo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             Disparar();
-    
         }
     }
 
@@ -51,5 +45,7 @@ public class Disparo : MonoBehaviour
 
         //Destruir la bala que generamos con delay
         Destroy(newBala, 1);
+
     }
+
 }
