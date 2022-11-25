@@ -13,6 +13,11 @@ public class Puerta : MonoBehaviour
 
     public Animator miAnim;
 
+    //Ref sonidos
+    public AudioSource Sonidos;
+    public AudioClip son1;
+    public AudioClip son2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +29,7 @@ public class Puerta : MonoBehaviour
     {
         AbrirPuerta();
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Key")
@@ -31,6 +37,10 @@ public class Puerta : MonoBehaviour
          
             //Cogemos una llave
             keys ++;
+
+            //Reproducimos sonido
+            Sonidos.clip = son1;
+            Sonidos.Play();
 
             //Eliminamos la llave
             Destroy(other.gameObject);
@@ -53,6 +63,7 @@ public class Puerta : MonoBehaviour
         if (keys == 2)
         {
             miAnim.SetBool("BAbrirPuerta", true);
+
         }
 
     }
